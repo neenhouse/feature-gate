@@ -1,0 +1,49 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "feature-gate",
+  "main": "worker/index.ts",
+  "compatibility_date": "2025-03-15",
+  "compatibility_flags": ["nodejs_compat"],
+
+  // Static assets served from Vite build output
+  "assets": {
+    "directory": "dist"
+  },
+
+  // KV namespace for flag storage
+  "kv_namespaces": [
+    {
+      "binding": "FLAGS",
+      "id": "<FLAGS_KV_ID>"
+    },
+    {
+      "binding": "AUDIT_LOG",
+      "id": "<AUDIT_LOG_KV_ID>"
+    }
+  ],
+
+  // D1 database for structured data (experiments, results, users)
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "feature-gate-db",
+      "database_id": "<D1_DATABASE_ID>"
+    }
+  ],
+
+  // Environment overrides
+  "env": {
+    "staging": {
+      "name": "feature-gate-staging",
+      "vars": {
+        "ENVIRONMENT": "staging"
+      }
+    },
+    "production": {
+      "name": "feature-gate",
+      "vars": {
+        "ENVIRONMENT": "production"
+      }
+    }
+  }
+}
