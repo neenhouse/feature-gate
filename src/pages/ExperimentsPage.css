@@ -1,0 +1,225 @@
+.experiments-page {
+  max-width: 1000px;
+}
+
+.experiments-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fg-space-lg);
+  margin-bottom: var(--fg-space-xl);
+}
+
+.experiment-card {
+  padding: var(--fg-space-lg);
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--fg-space-lg);
+}
+
+.exp-header h3 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+/* Variants */
+.variants-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--fg-space-md);
+  margin-bottom: var(--fg-space-lg);
+}
+
+.variant-card {
+  padding: var(--fg-space-md);
+  background: var(--fg-bg);
+  border: 1px solid var(--fg-border);
+  border-radius: var(--fg-radius-md);
+  transition: border-color 0.2s;
+}
+
+.variant-card--winner {
+  border-color: var(--fg-success);
+  background: rgba(34, 197, 94, 0.03);
+}
+
+.variant-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--fg-space-sm);
+}
+
+.variant-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--fg-text-heading);
+}
+
+.winner-badge {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--fg-success);
+  border-radius: 100px;
+  font-weight: 600;
+}
+
+.variant-rate {
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: var(--fg-mono);
+  color: var(--fg-text-heading);
+  margin-bottom: var(--fg-space-xs);
+}
+
+.variant-desc {
+  font-size: 0.8rem;
+  color: var(--fg-text-muted);
+  margin-bottom: var(--fg-space-sm);
+}
+
+.variant-stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--fg-text-muted);
+}
+
+/* Experiment stats row */
+.exp-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--fg-space-md);
+  margin-bottom: var(--fg-space-md);
+}
+
+.exp-stat {
+  text-align: center;
+}
+
+.exp-stat-label {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--fg-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.exp-stat-value {
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--fg-mono);
+  color: var(--fg-text-heading);
+}
+
+.exp-stat-value.significant {
+  color: var(--fg-success);
+}
+
+/* Significance meter */
+.significance-meter {
+  margin-bottom: var(--fg-space-md);
+}
+
+.significance-bar {
+  position: relative;
+  height: 12px;
+  background: var(--fg-bg-elevated);
+  border-radius: 6px;
+  overflow: visible;
+}
+
+.significance-fill {
+  height: 100%;
+  border-radius: 6px;
+  background: var(--fg-accent);
+  transition: width 0.5s ease;
+}
+
+.significance-fill--pass {
+  background: var(--fg-success);
+}
+
+.significance-threshold {
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+  width: 2px;
+  background: var(--fg-warning);
+  transform: translateX(-1px);
+}
+
+.significance-threshold span {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.65rem;
+  color: var(--fg-warning);
+  white-space: nowrap;
+}
+
+.significance-label {
+  margin-top: var(--fg-space-sm);
+  font-size: 0.8rem;
+  color: var(--fg-text-muted);
+}
+
+.progress-label {
+  font-size: 0.75rem;
+  color: var(--fg-text-muted);
+  margin-top: 4px;
+}
+
+/* Calculator */
+.calculator-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: var(--fg-space-xs);
+}
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--fg-space-md);
+  margin-bottom: var(--fg-space-lg);
+}
+
+.calc-result {
+  text-align: center;
+  padding: var(--fg-space-lg);
+  background: var(--fg-accent-bg);
+  border: 1px solid rgba(79, 70, 229, 0.2);
+  border-radius: var(--fg-radius-lg);
+}
+
+.calc-result-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: var(--fg-mono);
+  color: var(--fg-accent-light);
+}
+
+.calc-result-label {
+  font-size: 0.85rem;
+  color: var(--fg-text-muted);
+  margin-top: var(--fg-space-xs);
+}
+
+@media (max-width: 768px) {
+  .variants-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .exp-stats-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .calc-grid {
+    grid-template-columns: 1fr;
+  }
+}

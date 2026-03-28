@@ -1,24 +1,45 @@
-/* FeatureGate Design Tokens */
+/* =============================================
+   FeatureGate Design System
+   Indigo (#4f46e5) accent on dark (#0a0a0f)
+   Green (#22c55e) / Red (#ef4444) for flag states
+   ============================================= */
+
+/* --- Design Tokens --- */
 :root {
-  /* Colors */
+  /* Palette: Dark */
   --fg-bg: #0a0a0f;
-  --fg-bg-surface: #12121a;
+  --fg-bg-surface: #111118;
   --fg-bg-elevated: #1a1a25;
+  --fg-bg-hover: #22222e;
   --fg-border: #2a2a3a;
-  --fg-text: #a0a0b0;
-  --fg-text-heading: #f0f0f5;
-  --fg-text-muted: #606070;
-  --fg-accent: #6366f1;
-  --fg-accent-light: #818cf8;
-  --fg-accent-bg: rgba(99, 102, 241, 0.1);
+  --fg-border-light: #1e1e2e;
+
+  /* Palette: Text */
+  --fg-text: #a0a0b8;
+  --fg-text-heading: #ededf0;
+  --fg-text-muted: #5a5a70;
+
+  /* Palette: Accent (indigo) */
+  --fg-accent: #4f46e5;
+  --fg-accent-light: #6366f1;
+  --fg-accent-hover: #5b54e8;
+  --fg-accent-bg: rgba(79, 70, 229, 0.1);
+  --fg-accent-border: rgba(79, 70, 229, 0.25);
+
+  /* Palette: Semantic */
   --fg-success: #22c55e;
+  --fg-success-bg: rgba(34, 197, 94, 0.1);
+  --fg-success-border: rgba(34, 197, 94, 0.25);
   --fg-warning: #f59e0b;
+  --fg-warning-bg: rgba(245, 158, 11, 0.1);
+  --fg-warning-border: rgba(245, 158, 11, 0.25);
   --fg-danger: #ef4444;
   --fg-danger-bg: rgba(239, 68, 68, 0.1);
+  --fg-danger-border: rgba(239, 68, 68, 0.25);
 
   /* Typography */
-  --fg-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --fg-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', monospace;
+  --fg-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --fg-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, 'Cascadia Code', 'SF Mono', Menlo, monospace;
 
   /* Spacing */
   --fg-space-xs: 4px;
@@ -33,17 +54,20 @@
   --fg-radius-sm: 6px;
   --fg-radius-md: 8px;
   --fg-radius-lg: 12px;
+  --fg-radius-xl: 16px;
 
-  font-family: var(--fg-sans);
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--fg-text);
-  background: var(--fg-bg);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Shadows */
+  --fg-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --fg-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --fg-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+
+  /* Transitions */
+  --fg-transition-fast: 0.12s ease;
+  --fg-transition-base: 0.2s ease;
+  --fg-transition-slow: 0.35s ease;
 }
 
-/* Reset */
+/* --- Reset --- */
 *,
 *::before,
 *::after {
@@ -52,8 +76,23 @@
   padding: 0;
 }
 
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
 body {
   min-height: 100vh;
+  font-family: var(--fg-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--fg-text);
+  background: var(--fg-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 #root {
@@ -62,35 +101,99 @@ body {
   flex-direction: column;
 }
 
-/* Utility */
+/* --- Base Typography --- */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--fg-text-heading);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: 1.75rem; }
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.1rem; }
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--fg-accent-light);
+  text-decoration: none;
+  transition: color var(--fg-transition-fast);
+}
+
+a:hover {
+  color: var(--fg-text-heading);
+  text-decoration: underline;
+}
+
+strong {
+  font-weight: 600;
+  color: var(--fg-text-heading);
+}
+
+code {
+  font-family: var(--fg-mono);
+  font-size: 0.875em;
+  background: var(--fg-bg-elevated);
+  padding: 2px 6px;
+  border-radius: var(--fg-radius-sm);
+}
+
+pre {
+  font-family: var(--fg-mono);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input, select, textarea {
+  font-family: inherit;
+}
+
+/* --- Utility: Loading --- */
 .loading {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   color: var(--fg-text-muted);
-  font-size: 18px;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: var(--fg-text-heading);
-  font-weight: 600;
-  line-height: 1.3;
+/* --- Scrollbar (Webkit) --- */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-a {
-  color: var(--fg-accent-light);
-  text-decoration: none;
+::-webkit-scrollbar-track {
+  background: var(--fg-bg);
 }
 
-a:hover {
-  text-decoration: underline;
+::-webkit-scrollbar-thumb {
+  background: var(--fg-border);
+  border-radius: 4px;
 }
 
-code {
-  font-family: var(--fg-mono);
-  font-size: 0.9em;
-  background: var(--fg-bg-elevated);
-  padding: 2px 6px;
-  border-radius: var(--fg-radius-sm);
+::-webkit-scrollbar-thumb:hover {
+  background: var(--fg-text-muted);
+}
+
+/* --- Selection --- */
+::selection {
+  background: var(--fg-accent);
+  color: white;
 }

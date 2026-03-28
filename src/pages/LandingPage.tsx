@@ -1,40 +1,41 @@
+import { Link } from 'react-router-dom';
 import './LandingPage.css';
 
 const features = [
   {
     title: 'Flag Creation + Targeting',
     description: 'Boolean, string, number, or JSON flags with attribute-based targeting rules. First-match priority, regex, semver, and percentage splits.',
-    icon: '🎯',
+    icon: '\u{1F3AF}',
   },
   {
     title: 'Gradual Rollouts',
     description: 'Percentage-based rollouts with deterministic bucketing, sticky assignments, scheduled ramps, and automatic rollback triggers.',
-    icon: '📈',
+    icon: '\u{1F4C8}',
   },
   {
     title: 'A/B Testing + Stats',
     description: 'Built-in sample size calculator, sequential testing, confidence intervals, and automatic winner declaration. No stats PhD required.',
-    icon: '🧪',
+    icon: '\u{1F9EA}',
   },
   {
     title: 'Kill Switch',
     description: 'One-click emergency flag disable. Propagates globally in under 10 seconds. Bulk kill by tag. Full restore capability.',
-    icon: '🛑',
+    icon: '\u{1F6D1}',
   },
   {
     title: 'Flag Lifecycle',
     description: 'Track flags from draft to archived. Stale detection, deprecation workflows, cleanup reports, and ownership management.',
-    icon: '♻️',
+    icon: '\u{267B}\u{FE0F}',
   },
   {
     title: 'Audit Log',
     description: 'Immutable record of every change. Before/after diffs, search and filter, CSV/JSON export, and webhook streaming.',
-    icon: '📋',
+    icon: '\u{1F4CB}',
   },
   {
     title: 'SDK Generator',
     description: 'Copy-paste integration code for JavaScript, Python, Go, Ruby, Java, and Rust. Framework-specific variants included.',
-    icon: '⚡',
+    icon: '\u{26A1}',
   },
 ];
 
@@ -61,17 +62,17 @@ export default function LandingPage() {
       <header className="hero">
         <div className="hero-content">
           <h1>
-            Feature flags that evaluate at the edge.
+            Ship features fearlessly.
           </h1>
           <p className="hero-subtitle">
-            Ship with confidence. FeatureGate gives you targeting rules, gradual rollouts,
+            FeatureGate gives you targeting rules, gradual rollouts,
             A/B testing with statistical rigor, and a kill switch for when things go wrong.
             All served from Cloudflare's edge for sub-millisecond evaluation.
           </p>
           <div className="hero-actions">
-            <a href="#features" className="btn btn-primary">Explore Features</a>
-            <a href="https://github.com/neenhouse/feature-gate" className="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-              View on GitHub
+            <Link to="/dashboard" className="btn btn-primary">Open Dashboard</Link>
+            <a href="#features" className="btn btn-secondary">
+              Explore Features
             </a>
           </div>
         </div>
@@ -123,13 +124,22 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* CTA */}
+      <section className="cta-section">
+        <h2>Ready to ship with confidence?</h2>
+        <p>Get started in under 5 minutes. No credit card required.</p>
+        <Link to="/dashboard" className="btn btn-primary btn-lg">
+          Open Dashboard
+        </Link>
+      </section>
+
       {/* Footer */}
       <footer className="footer">
         <div className="footer-content">
-          <p>FeatureGate — Open source feature flags and experimentation.</p>
+          <p>FeatureGate -- Open source feature flags and experimentation.</p>
           <div className="footer-links">
             <a href="https://github.com/neenhouse/feature-gate" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="/docs">Docs</a>
+            <Link to="/dashboard">Dashboard</Link>
           </div>
         </div>
       </footer>

@@ -41,13 +41,21 @@
 }
 
 .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 12px 24px;
   border-radius: var(--fg-radius-md);
   font-size: 1rem;
   font-weight: 500;
   text-decoration: none;
-  transition: all 0.2s;
+  transition: all var(--fg-transition-base);
   cursor: pointer;
+  border: none;
+}
+
+.btn:hover {
+  text-decoration: none;
 }
 
 .btn-primary {
@@ -56,8 +64,8 @@
 }
 
 .btn-primary:hover {
-  background: var(--fg-accent-light);
-  text-decoration: none;
+  background: var(--fg-accent-hover);
+  color: white;
 }
 
 .btn-secondary {
@@ -67,8 +75,13 @@
 }
 
 .btn-secondary:hover {
-  background: var(--fg-bg-surface);
-  text-decoration: none;
+  background: var(--fg-bg-hover);
+  color: var(--fg-text-heading);
+}
+
+.btn-lg {
+  padding: 16px 36px;
+  font-size: 1.1rem;
 }
 
 /* Stats */
@@ -128,7 +141,7 @@
   background: var(--fg-bg-surface);
   border: 1px solid var(--fg-border);
   border-radius: var(--fg-radius-lg);
-  transition: border-color 0.2s;
+  transition: border-color var(--fg-transition-base);
 }
 
 .feature-card:hover {
@@ -202,6 +215,24 @@
   line-height: 1.7;
   background: none;
   padding: 0;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: var(--fg-space-3xl) var(--fg-space-lg);
+  text-align: center;
+  border-top: 1px solid var(--fg-border);
+  background: linear-gradient(180deg, var(--fg-bg) 0%, var(--fg-bg-surface) 100%);
+}
+
+.cta-section h2 {
+  font-size: 2rem;
+  margin-bottom: var(--fg-space-sm);
+}
+
+.cta-section p {
+  color: var(--fg-text-muted);
+  margin-bottom: var(--fg-space-xl);
 }
 
 /* Footer */

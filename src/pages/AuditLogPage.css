@@ -1,0 +1,253 @@
+.audit-page {
+  max-width: 900px;
+}
+
+/* Filters */
+.audit-filters {
+  display: flex;
+  gap: var(--fg-space-md);
+  margin-bottom: var(--fg-space-md);
+}
+
+.audit-filters .search-input {
+  flex: 1;
+}
+
+.audit-filter-select {
+  width: 200px;
+}
+
+.audit-summary {
+  font-size: 0.8rem;
+  color: var(--fg-text-muted);
+  margin-bottom: var(--fg-space-lg);
+}
+
+/* Audit feed */
+.audit-feed {
+  display: flex;
+  flex-direction: column;
+}
+
+.audit-entry {
+  cursor: pointer;
+  transition: background var(--fg-transition-fast);
+  border-radius: var(--fg-radius-md);
+  padding: var(--fg-space-sm);
+  margin-left: var(--fg-space-sm);
+}
+
+.audit-entry:hover {
+  background: var(--fg-bg-surface);
+}
+
+.audit-entry--expanded {
+  background: var(--fg-bg-surface);
+}
+
+.audit-entry-main {
+  display: flex;
+  gap: var(--fg-space-md);
+}
+
+/* Timeline */
+.audit-timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 16px;
+  flex-shrink: 0;
+  padding-top: 6px;
+}
+
+.audit-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.audit-line {
+  width: 2px;
+  flex: 1;
+  background: var(--fg-border);
+  margin-top: 4px;
+}
+
+/* Content */
+.audit-content {
+  flex: 1;
+  padding-bottom: var(--fg-space-md);
+  border-bottom: 1px solid var(--fg-border-light);
+}
+
+.audit-entry:last-child .audit-content {
+  border-bottom: none;
+}
+
+.audit-entry:last-child .audit-line {
+  display: none;
+}
+
+.audit-content-header {
+  display: flex;
+  align-items: center;
+  gap: var(--fg-space-sm);
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+
+.audit-action-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  padding: 2px 8px;
+  border: 1px solid;
+  border-radius: 100px;
+}
+
+.audit-resource {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--fg-text-heading);
+}
+
+.audit-time {
+  font-size: 0.75rem;
+  color: var(--fg-text-muted);
+  margin-left: auto;
+}
+
+.audit-description {
+  font-size: 0.85rem;
+  color: var(--fg-text);
+  margin-bottom: 4px;
+}
+
+.audit-actor {
+  font-size: 0.75rem;
+  color: var(--fg-text-muted);
+}
+
+/* Expanded details */
+.audit-details {
+  margin-left: 32px;
+  margin-top: var(--fg-space-sm);
+  padding: var(--fg-space-md);
+  background: var(--fg-bg);
+  border: 1px solid var(--fg-border);
+  border-radius: var(--fg-radius-md);
+  margin-bottom: var(--fg-space-md);
+}
+
+.audit-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--fg-space-sm);
+  margin-bottom: var(--fg-space-md);
+}
+
+.audit-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.audit-detail-label {
+  font-size: 0.7rem;
+  color: var(--fg-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.audit-detail-value {
+  font-size: 0.85rem;
+  color: var(--fg-text-heading);
+}
+
+.mono-value {
+  font-family: var(--fg-mono);
+  font-size: 0.85rem;
+}
+
+/* Diff */
+.audit-diff {
+  padding-top: var(--fg-space-md);
+  border-top: 1px solid var(--fg-border);
+}
+
+.audit-diff h4 {
+  font-size: 0.8rem;
+  color: var(--fg-text-muted);
+  margin-bottom: var(--fg-space-sm);
+}
+
+.diff-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--fg-space-md);
+}
+
+.diff-col {
+  padding: var(--fg-space-sm);
+  border-radius: var(--fg-radius-sm);
+}
+
+.diff-col--before {
+  background: var(--fg-danger-bg);
+  border: 1px solid var(--fg-danger-border);
+}
+
+.diff-col--after {
+  background: var(--fg-success-bg);
+  border: 1px solid var(--fg-success-border);
+}
+
+.diff-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--fg-space-xs);
+}
+
+.diff-col--before .diff-label {
+  color: var(--fg-danger);
+}
+
+.diff-col--after .diff-label {
+  color: var(--fg-success);
+}
+
+.diff-col code {
+  font-size: 0.8rem;
+  background: none;
+  padding: 0;
+  color: var(--fg-text-heading);
+}
+
+@media (max-width: 768px) {
+  .audit-filters {
+    flex-direction: column;
+  }
+
+  .audit-filter-select {
+    width: 100%;
+  }
+
+  .audit-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .diff-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .audit-time {
+    margin-left: 0;
+    width: 100%;
+    order: -1;
+  }
+}

@@ -1,0 +1,118 @@
+.create-page {
+  max-width: 800px;
+}
+
+.create-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fg-space-lg);
+}
+
+.form-section h3 {
+  font-size: 1rem;
+  margin-bottom: var(--fg-space-md);
+}
+
+.form-error {
+  display: block;
+  color: var(--fg-danger);
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+.form-hint {
+  display: block;
+  color: var(--fg-text-muted);
+  font-size: 0.75rem;
+  margin-top: 4px;
+}
+
+/* Environment config */
+.env-config-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--fg-space-md);
+}
+
+.env-config-item {
+  padding: var(--fg-space-md);
+  background: var(--fg-bg);
+  border: 1px solid var(--fg-border);
+  border-radius: var(--fg-radius-md);
+}
+
+.env-config-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--fg-space-sm);
+}
+
+.env-config-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--fg-text-heading);
+  text-transform: capitalize;
+}
+
+.env-config-rollout {
+  margin-top: var(--fg-space-sm);
+}
+
+.env-config-rollout label {
+  font-size: 0.8rem;
+  color: var(--fg-text-muted);
+  margin-bottom: var(--fg-space-xs);
+  display: block;
+}
+
+/* Targeting rules */
+.targeting-rule {
+  display: flex;
+  align-items: center;
+  gap: var(--fg-space-sm);
+  padding: var(--fg-space-sm) 0;
+  border-bottom: 1px solid var(--fg-border);
+}
+
+.targeting-rule:last-child {
+  border-bottom: none;
+}
+
+.rule-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  gap: var(--fg-space-sm);
+  flex: 1;
+}
+
+.rule-remove {
+  flex-shrink: 0;
+}
+
+/* Form actions */
+.form-actions {
+  display: flex;
+  gap: var(--fg-space-sm);
+  justify-content: flex-end;
+}
+
+.form-actions .btn {
+  padding: 10px 24px;
+  font-family: inherit;
+}
+
+@media (max-width: 768px) {
+  .env-config-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rule-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .targeting-rule {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

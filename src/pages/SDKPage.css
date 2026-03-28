@@ -1,0 +1,130 @@
+.sdk-page {
+  max-width: 900px;
+}
+
+/* Config */
+.sdk-config {
+  margin-bottom: var(--fg-space-lg);
+  max-width: 500px;
+}
+
+/* Language tabs */
+.sdk-languages {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--fg-border);
+  margin-bottom: var(--fg-space-lg);
+  overflow-x: auto;
+}
+
+.sdk-lang-tab {
+  padding: var(--fg-space-sm) var(--fg-space-md);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--fg-text-muted);
+  cursor: pointer;
+  border: none;
+  background: none;
+  border-bottom: 2px solid transparent;
+  transition: all var(--fg-transition-fast);
+  font-family: var(--fg-mono);
+  white-space: nowrap;
+}
+
+.sdk-lang-tab:hover {
+  color: var(--fg-text);
+}
+
+.sdk-lang-tab--active {
+  color: var(--fg-accent-light);
+  border-bottom-color: var(--fg-accent);
+}
+
+/* Install section */
+.sdk-install-section {
+  margin-bottom: var(--fg-space-lg);
+}
+
+.sdk-install-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--fg-space-sm);
+}
+
+.sdk-install-header h3 {
+  font-size: 0.9rem;
+}
+
+.sdk-install-code {
+  padding: var(--fg-space-md);
+  background: var(--fg-bg-surface);
+  border: 1px solid var(--fg-border);
+  border-radius: var(--fg-radius-md);
+}
+
+.sdk-install-code code {
+  font-family: var(--fg-mono);
+  font-size: 0.85rem;
+  color: var(--fg-success);
+  background: none;
+  padding: 0;
+}
+
+/* Code header extras */
+.sdk-code-lang {
+  font-family: var(--fg-mono);
+  font-size: 0.8rem;
+  color: var(--fg-accent-light);
+  font-weight: 500;
+}
+
+.sdk-flag-info {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.sdk-flag-info code {
+  font-size: 0.75rem;
+}
+
+/* Quick reference */
+.sdk-reference {
+  margin-top: var(--fg-space-xl);
+}
+
+.sdk-reference h3 {
+  margin-bottom: var(--fg-space-md);
+}
+
+.sdk-ref-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--fg-space-md);
+}
+
+.sdk-ref-card {
+  padding: var(--fg-space-md);
+  background: var(--fg-bg-surface);
+  border: 1px solid var(--fg-border);
+  border-radius: var(--fg-radius-md);
+}
+
+.sdk-ref-card h4 {
+  font-size: 0.85rem;
+  color: var(--fg-text-heading);
+  margin-bottom: var(--fg-space-xs);
+}
+
+.sdk-ref-card p {
+  font-size: 0.8rem;
+  color: var(--fg-text-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .sdk-ref-grid {
+    grid-template-columns: 1fr;
+  }
+}
