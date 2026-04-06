@@ -43,7 +43,7 @@ export default function LifecyclePage() {
     if (!flag) return;
     updateFlag(flagId, { status: 'archived', enabled: false });
     addAuditEntry({
-      id: `audit-${Date.now()}`,
+      id: crypto.randomUUID(),
       timestamp: new Date().toISOString(),
       actor: { id: 'u0', email: 'you@company.com', name: 'You' },
       action: 'archived',
@@ -62,7 +62,7 @@ export default function LifecyclePage() {
     if (!flag) return;
     updateFlag(flagId, { status: 'deprecated' });
     addAuditEntry({
-      id: `audit-${Date.now()}`,
+      id: crypto.randomUUID(),
       timestamp: new Date().toISOString(),
       actor: { id: 'u0', email: 'you@company.com', name: 'You' },
       action: 'updated',

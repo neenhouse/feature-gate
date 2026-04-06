@@ -38,7 +38,7 @@ export default function FlagDetailPage() {
       },
     });
     addAuditEntry({
-      id: `audit-${Date.now()}`,
+      id: crypto.randomUUID(),
       timestamp: new Date().toISOString(),
       actor: { id: 'u0', email: 'you@company.com', name: 'You' },
       action: 'rollout_changed',
@@ -61,7 +61,7 @@ export default function FlagDetailPage() {
       },
     });
     addAuditEntry({
-      id: `audit-${Date.now()}`,
+      id: crypto.randomUUID(),
       timestamp: new Date().toISOString(),
       actor: { id: 'u0', email: 'you@company.com', name: 'You' },
       action: newEnabled ? 'enabled' : 'disabled',
