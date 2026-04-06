@@ -13,6 +13,21 @@
   overflow: hidden;
 }
 
+/* OG image — full bleed background, dark overlay for readability */
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  opacity: 0.08;
+  mix-blend-mode: luminosity;
+  pointer-events: none;
+  z-index: 0;
+}
+
 /* Radial glow behind hero headline */
 .hero::before {
   content: '';

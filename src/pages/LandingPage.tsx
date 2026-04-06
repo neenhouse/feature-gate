@@ -61,6 +61,13 @@ export default function LandingPage() {
       <a href="#main-content" className="skip-to-content">Skip to content</a>
       {/* Hero */}
       <header className="hero">
+        <img
+          src="/hero-og.webp"
+          alt=""
+          aria-hidden="true"
+          className="hero-bg-img"
+          loading="eager"
+        />
         <div className="hero-content">
           <h1>
             Ship features fearlessly.
