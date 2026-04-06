@@ -61,13 +61,10 @@ export default function LandingPage() {
       <a href="#main-content" className="skip-to-content">Skip to content</a>
       {/* Hero */}
       <header className="hero">
-        <img
-          src="/hero-og.webp"
-          alt=""
-          aria-hidden="true"
-          className="hero-bg-img"
-          loading="eager"
-        />
+        <video autoPlay muted loop playsInline poster="/hero-og.webp" aria-hidden="true" className="hero-bg-img">
+          <source src="/hero-og.webm" type="video/webm" />
+          <source src="/hero-og.mp4" type="video/mp4" />
+        </video>
         <div className="hero-content">
           <h1>
             Ship features fearlessly.
