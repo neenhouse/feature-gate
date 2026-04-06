@@ -58,6 +58,7 @@ fg.track('purchase_completed', {
 export default function LandingPage() {
   return (
     <div className="landing">
+      <a href="#main-content" className="skip-to-content">Skip to content</a>
       {/* Hero */}
       <header className="hero">
         <div className="hero-content">
@@ -79,6 +80,7 @@ export default function LandingPage() {
       </header>
 
       {/* Stats */}
+      <main id="main-content">
       <section className="stats">
         <div className="stat">
           <span className="stat-value">&lt;5ms</span>
@@ -133,6 +135,7 @@ export default function LandingPage() {
         </Link>
       </section>
 
+      </main>
       {/* Footer */}
       <footer className="footer">
         <div className="footer-content">

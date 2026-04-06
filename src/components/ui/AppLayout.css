@@ -1,6 +1,6 @@
 .app-layout {
   display: flex;
-  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 /* Sidebar */
@@ -13,7 +13,7 @@
   flex-direction: column;
   position: sticky;
   top: 0;
-  height: 100vh;
+  height: 100dvh;
 }
 
 .sidebar-brand {

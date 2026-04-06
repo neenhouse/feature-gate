@@ -14,6 +14,7 @@ const navItems = [
 export default function AppLayout() {
   return (
     <div className="app-layout">
+      <a href="#main-content" className="skip-to-content">Skip to content</a>
       <aside className="sidebar">
         <div className="sidebar-brand">
           <NavLink to="/" className="brand-link">
@@ -37,7 +38,7 @@ export default function AppLayout() {
           <div className="env-badge">Production</div>
         </div>
       </aside>
-      <main className="main-content">
+      <main className="main-content" id="main-content">
         <Outlet />
       </main>
     </div>

@@ -84,10 +84,11 @@ html {
   -webkit-text-size-adjust: 100%;
   -moz-tab-size: 4;
   tab-size: 4;
+  scroll-behavior: smooth;
 }
 
 body {
-  min-height: 100vh;
+  min-height: 100dvh;
   font-family: var(--fg-sans);
   font-size: 1rem;
   line-height: 1.6;
@@ -99,7 +100,7 @@ body {
 }
 
 #root {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
 }
@@ -170,7 +171,7 @@ input, select, textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 100dvh;
   color: var(--fg-text-muted);
   font-size: 1rem;
   letter-spacing: 0.02em;
@@ -199,4 +200,42 @@ input, select, textarea {
 ::selection {
   background: var(--fg-accent);
   color: white;
+}
+
+/* --- Skip to content --- */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 9999;
+  padding: 8px 16px;
+  background: var(--fg-accent);
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0 0 var(--fg-radius-sm) 0;
+}
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* --- Focus-visible rings --- */
+:focus-visible {
+  outline: 2px solid var(--fg-accent-light);
+  outline-offset: 2px;
+}
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* --- Reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
