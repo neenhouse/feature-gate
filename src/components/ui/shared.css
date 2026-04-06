@@ -7,12 +7,15 @@
 
 .page-header h1 {
   font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
   margin-bottom: var(--fg-space-xs);
 }
 
 .page-header p {
   color: var(--fg-text-muted);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
 }
 
 /* Cards */
@@ -21,6 +24,7 @@
   border: 1px solid var(--fg-border);
   border-radius: var(--fg-radius-lg);
   padding: var(--fg-space-lg);
+  transition: border-color var(--fg-transition-base);
 }
 
 .card-header {
@@ -245,7 +249,11 @@
   border-bottom: none;
 }
 
-.data-table tr:hover td {
+.data-table tbody tr {
+  transition: background-color 0.1s;
+}
+
+.data-table tbody tr:hover td {
   background: var(--fg-bg-elevated);
 }
 
@@ -394,19 +402,29 @@
   border: 1px solid var(--fg-border);
   border-radius: var(--fg-radius-lg);
   padding: var(--fg-space-md);
+  transition: border-color var(--fg-transition-base), box-shadow var(--fg-transition-base);
+}
+
+.stat-card:hover {
+  border-color: rgba(79, 70, 229, 0.3);
+  box-shadow: 0 4px 16px rgba(79, 70, 229, 0.08);
 }
 
 .stat-card-value {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.75rem;
+  font-weight: 800;
   color: var(--fg-text-heading);
   font-family: var(--fg-mono);
+  letter-spacing: -0.5px;
 }
 
 .stat-card-label {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
+  font-weight: 500;
   color: var(--fg-text-muted);
   margin-top: var(--fg-space-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 /* Confirmation modal */

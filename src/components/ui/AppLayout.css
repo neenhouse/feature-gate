@@ -59,25 +59,30 @@
   border-radius: var(--fg-radius-sm);
   color: var(--fg-text);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   font-weight: 500;
   transition: all 0.15s;
+  border-left: 2px solid transparent;
 }
 
 .nav-item:hover {
   background: var(--fg-bg-elevated);
   color: var(--fg-text-heading);
   text-decoration: none;
+  border-left-color: var(--fg-border);
 }
 
 .nav-item--active {
   background: var(--fg-accent-bg);
   color: var(--fg-accent-light);
+  border-left-color: var(--fg-accent);
+  font-weight: 600;
 }
 
 .nav-item--active:hover {
   background: var(--fg-accent-bg);
   color: var(--fg-accent-light);
+  border-left-color: var(--fg-accent);
 }
 
 .sidebar-footer {

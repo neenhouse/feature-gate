@@ -41,6 +41,9 @@
   --fg-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --fg-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, 'Cascadia Code', 'SF Mono', Menlo, monospace;
 
+  /* Glow */
+  --fg-glow-accent: 0 0 20px rgba(79, 70, 229, 0.35);
+
   /* Spacing */
   --fg-space-xs: 4px;
   --fg-space-sm: 8px;
@@ -104,14 +107,14 @@ body {
 /* --- Base Typography --- */
 h1, h2, h3, h4, h5, h6 {
   color: var(--fg-text-heading);
-  font-weight: 600;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
 }
 
 h1 { font-size: 1.75rem; }
 h2 { font-size: 1.4rem; }
-h3 { font-size: 1.1rem; }
+h3 { font-size: 1.05rem; }
 
 p {
   margin: 0;
